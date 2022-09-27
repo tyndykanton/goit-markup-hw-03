@@ -5,6 +5,7 @@
     --accent-colo: #2196F3;
     --description-text: #757575;
     --background-color: #2F303A;
+    --border-color: #EEEEEE;
 }
 
 h1,
@@ -44,10 +45,13 @@ body {
     margin: 0 auto;
 }
 
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+
 .header-container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ECECEC;
 }
 
 .header-logo {
@@ -142,24 +146,25 @@ body {
 }
 /* Hero Section */
 
-.hero {
-    width: 1600px;
-    margin: 0 auto;
-}
-
 .hero,
 .footer {
     background-color: var(--background-color);
 }
 
-.hero-title-wrapper {
-    max-width: 696px;
-    padding: 280px 0px 30px 452px;
+.hero {
+    padding: 200px 0px;
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hero-liste-wrap {
     text-align: center;
-    padding: 94px 0px 16px 0px;
+    padding-top: 94px;
 }
 
 .hero-title {
@@ -170,6 +175,8 @@ body {
     text-transform: uppercase;
     color: var(--secondayr-text-color);
     text-align: center;
+    max-width: 696px;
+    margin-bottom: 30px;
 }
 
 .hero-btn {
@@ -181,10 +188,7 @@ body {
     font-family: inherit;
     cursor: pointer;
     padding: 10px 32px 10px 32px;
-}
-
-.button-wrapper {
-    padding: 30px 0px 200px 692px;
+    border: 1px solid transparent;
 }
 
 .hero-btn-portfolio {
@@ -195,7 +199,14 @@ body {
     text-decoration: none;
     font-family: inherit;
     cursor: pointer;
-    padding: 6px 25px 6px 25px;
+    padding: 6px 22px;
+    border: 1px solid transparent;
+}
+
+.border {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .services-list-title {
@@ -204,6 +215,7 @@ body {
     line-height: 2;
     letter-spacing: 0.06em;
     text-decoration: none;
+    padding: 20px 24px 4px 24px;
 }
 
 .services-list-pre-title {
@@ -212,17 +224,22 @@ body {
     line-height: 1.9;
     letter-spacing: 0.03em;
     text-decoration: none;
-    color: var(--description-text)
+    color: var(--description-text);
+    padding: 0px 24px 20px 24px;
 }
 
 .services-list {
     display: flex;
     flex-wrap: wrap;
-    padding: 34px 0px 64px 0px;
+    padding: 50px 0px 94px 0px;
 }
 
-.services-list-portfolio {
-    margin: 0px 0px 30px 30px;
+.portfolio-liste-wrap li:nth-child(3n+2), .portfolio-liste-wrap li:nth-child(3n+3) {
+    margin-left: 30px;
+}
+
+.portfolio-liste-wrap li:not(:nth-child(n+7)) {
+    margin-bottom: 30px;
 }
 
 /* Hide heading */
@@ -275,6 +292,10 @@ body {
 
 /* Specification Section */
 
+.specification {
+    padding-bottom: 94px;
+}
+
 .specification-title,
 .team-title {
     font-weight: 700;
@@ -290,10 +311,6 @@ body {
 .specification-list {
     display: flex;
     flex-wrap: wrap;
-}
-
-.specification-item {
-    width: calc((100% - 60px) / 3);
 }
 
 .specification-item:not(:first-child) {
@@ -312,7 +329,12 @@ body {
 }
 
 .team-list {
-    width: calc((100% - 90px) / 4);
+    box-shadow: 
+    0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .team-list:not(:first-child) {
@@ -326,6 +348,8 @@ body {
     letter-spacing: 0.03em;
     text-decoration: none;
     text-transform: capitalize;
+    text-align: center;
+    padding: 30px 0px 10px 0px;
 }
 
 .team-employee-item {
@@ -334,24 +358,21 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em;
     text-decoration: none;
+    text-align: center;
     color: var(--description-text);
+    padding-bottom: 30px;
 }
 
 
 /* Footer */
 
 .footer {
-    width: 1600px;
-    margin: 0 auto;
+    padding: 60px 0px;
 }
 
 .footer-logo-wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.footer-logo {
-    padding: 60px 0px 20px 0px;
 }
 
 .logo-footer-studio {
@@ -362,10 +383,6 @@ body {
     letter-spacing: 0.03em;
     text-decoration: none;
     color: var(--secondayr-text-color);
-}
-
-.footer-item {
-    display: flex;
 }
 
 .footer-address{
@@ -384,13 +401,4 @@ body {
 .footer-mailto,
 .footer-contact {
     color: #ffffff60;
-}
-
-.footer-map,
-.footer-mailto {
-    padding-bottom: 9px;
-}
-
-.footer-contact {
-    padding-bottom: 60px;
 }
